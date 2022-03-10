@@ -1,4 +1,4 @@
-from processors import ImageProcessor, filter_spec, imageprocessor_from_preset
+from .processors import ImageProcessor, filter_spec, imageprocessor_from_preset
 from cache import ImageCache, CachedImage
 from presets import get_preset
 
