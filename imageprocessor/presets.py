@@ -42,7 +42,7 @@ class PresetsRegistry(object):
         """
         register preset instance by name
         """
-        if name in self.presets(name):
+        if self.presets.__contains__(name):
             raise KeyError('Preset with name "%s" already registered' % name)
         self.presets[name] = preset
 
