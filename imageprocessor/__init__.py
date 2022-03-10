@@ -1,6 +1,6 @@
 from .processors import ImageProcessor, filter_spec, imageprocessor_from_preset
-from cache import ImageCache, CachedImage
-from presets import get_preset
+from .cache import ImageCache, CachedImage
+from .presets import get_preset
 
 
 def process_image(preset_name, filename):

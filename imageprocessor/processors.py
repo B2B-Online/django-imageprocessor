@@ -6,7 +6,7 @@ module provides ImageProcessor class for batch processing images
 
 from PIL import Image 
 import os
-from presets import Filter as filter_spec # bc
+from .presets import Filter as filter_spec # bc
 
 
 class ImageProcessor(object):

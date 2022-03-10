@@ -5,7 +5,7 @@ batch processing presets
 """
 
 import os
-import settings
+from . import settings
 import warnings
 
 
@@ -42,7 +42,7 @@ class PresetsRegistry(object):
         """
         register preset instance by name
         """
-        if self.presets.has_key(name):
+        if name in self.presets(name):
             raise KeyError('Preset with name "%s" already registered' % name)
         self.presets[name] = preset
 
@@ -79,7 +79,7 @@ def create_preset(name, filters, cached=True, output_dir=None):
     """
     wrapper for easy presets creating and registering
     """
-    from processors import ImageProcessor
+    from .processors import ImageProcessor
     if isinstance(filters, ImageProcessor):
          warnings.warn('Configure preset with filters not ImageProcessor instance',
                 DeprecationWarning)
